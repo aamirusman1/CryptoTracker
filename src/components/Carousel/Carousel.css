@@ -1,0 +1,16 @@
+/* Carousel.css */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* Light grey background */
+  border: 2px solid #ccc; /* Grey border */
+  border-radius: 8px; /* Rounded corners */
+  height: 150px; /* Fixed height */
+  color: #333; /* Dark text color */
+  font-size: 24px; /* Larger font size */
+}
+
+.item h3 {
+  margin: 0; /* Remove default margin from h3 */
+}
