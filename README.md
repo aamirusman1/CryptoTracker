@@ -22,5 +22,12 @@ npm i react-alice-carousel -> To install carousel
 git init -> Existing project in local
 master branch is created in local
 git branch -M main -> Rename master branch to main
+git commit -m "commit message" -> commit any existing changes
 git remote add origin https://github.com/aamirusman1/CryptoTracker.git -> To connect local repo with the remote repo
 git remote show origin -> To check connected or not
+
+git may ask please tell me who you are:
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+git push -u origin main
