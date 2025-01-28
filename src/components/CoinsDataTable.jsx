@@ -12,6 +12,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 const CoinsDataTable = () => {
   const [search, setSearch] = useState("");
@@ -99,21 +101,42 @@ const CoinsDataTable = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {filteredRows.map((row, index) => (
-                <StyledTableRow key={row.index}>
-                  <StyledTableCell component="th" scope="row">
-                    {row.title}
-                  </StyledTableCell>
-                  <StyledTableCell align="right">
-                    {row.category}
-                  </StyledTableCell>
-                  <StyledTableCell align="right">{row.price}</StyledTableCell>
-                  <StyledTableCell align="right">{row.rating}</StyledTableCell>
-                </StyledTableRow>
-              ))}
+              {filteredRows
+                .slice((page - 1) * 10, (page - 1) * 10 + 10)
+                .map((row) => (
+                  <StyledTableRow key={row.title}>
+                    <StyledTableCell component="th" scope="row">
+                      {row.title}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">
+                      {row.category}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">{row.price}</StyledTableCell>
+                    <StyledTableCell align="right">
+                      {row.rating}
+                    </StyledTableCell>
+                  </StyledTableRow>
+                ))}
             </TableBody>
           </Table>
         </TableContainer>
+
+        <Stack spacing={2}>
+          <Pagination
+            count={(filteredRows?.length / 10).toFixed(0)}
+            onChange={(_, value) => {
+              setPage(value);
+              window.scroll(0, 450);
+            }}
+            color="primary"
+            style={{
+              padding: 20,
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          />
+        </Stack>
       </Container>
     </>
   );
