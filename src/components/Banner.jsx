@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "./Carousel/Carousel";
 import { Box, Container, Typography } from "@mui/material";
-import bannerImage from "../assets/banner4.jpg";
+import bannerImage from "../assets/banner5.jpg";
 
 const Banner = () => {
   return (

@@ -5,8 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Container, Select, MenuItem } from "@mui/material";
+import { CryptoState } from "../contexts/CryptoContext";
 
 const Header = () => {
+  const { currency, setCurrency } = CryptoState();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -27,6 +30,7 @@ const Header = () => {
                 borderRadius: 1,
                 marginRight: 2,
               }}
+              onChange={(e) => setCurrency(e.target.value)}
             >
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"INR"}>INR</MenuItem>
