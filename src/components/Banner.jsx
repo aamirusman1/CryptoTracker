@@ -17,10 +17,10 @@ const Banner = () => {
             paddingTop: 5,
           }}
         >
-          <Typography variant="h2" sx={{ color: "black" }}>
+          <Typography variant="h2" sx={{ color: "white" }}>
             Crypto Tracker
           </Typography>
-          <Typography variant="subtitle2" sx={{ color: "black" }}>
+          <Typography variant="subtitle2" sx={{ color: "white" }}>
             Get all relevant information about cryptocurrency
           </Typography>
           <Carousel></Carousel>
