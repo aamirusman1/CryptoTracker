@@ -11,7 +11,7 @@ const CoinRoute = () => {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/coin" element={<CoinPage />} />
+        <Route path="/coins/:id" element={<CoinPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

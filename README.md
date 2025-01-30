@@ -16,6 +16,8 @@ npm uninstall react-router-dom -> To uninstall version 7
 npm install react-router-dom@6.28.1
 npm install axios
 npm i react-alice-carousel -> To install carousel
+npm install html-react-parser -> convert raw HTML strings into React Elements.
+npm i react-chartjs-2 chart.js
 
 # Connecting with a remote git repo
 

@@ -22,6 +22,7 @@ import Stack from "@mui/material/Stack";
 
 import { CryptoState } from "../contexts/CryptoContext";
 import { CoinList } from "../config/api";
+import { useNavigate } from "react-router-dom";
 
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -34,6 +35,7 @@ const CoinsDataTable = () => {
   const [page, setPage] = useState(1);
 
   const { currency, symbol } = CryptoState();
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -125,7 +127,15 @@ const CoinsDataTable = () => {
                   .map((row) => {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
-                      <StyledTableRow key={row.name}>
+                      <StyledTableRow
+                        key={row.name}
+                        onClick={() => navigate(`/coins/${row.id}`)}
+                        style={{
+                          cursor: "pointer",
+
+                          fontFamily: "Montserrat",
+                        }}
+                      >
                         <StyledTableCell
                           component="th"
                           scope="row"

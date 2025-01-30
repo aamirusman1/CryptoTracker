@@ -6,6 +6,7 @@ import { CryptoState } from "../../contexts/CryptoContext";
 import { TrendingCoins } from "../../config/api";
 import axios from "axios";
 import { numberWithCommas } from "../CoinsDataTable";
+import { Link } from "react-router-dom";
 
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
@@ -39,7 +40,8 @@ const Carousel = () => {
     let profit = coin?.price_change_percentage_24h >= 0;
 
     return (
-      <div
+      <Link
+        to={`/coins/${coin.id}`}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -71,7 +73,7 @@ const Carousel = () => {
         <span style={{ fontSize: 22, fontWeight: 500 }}>
           {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
         </span>
-      </div>
+      </Link>
     );
   });
 
